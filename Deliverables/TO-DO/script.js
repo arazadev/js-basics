@@ -23,7 +23,6 @@ function addTask() {
 
   deleteBtn.addEventListener("click", () => {
     li.remove();
-
   });
 
   li.appendChild(deleteBtn);
@@ -31,13 +30,21 @@ function addTask() {
 
   // Clear input
   taskInput.value = "";
-//   taskInput.focus();
+  taskInput.focus();
 }
 
 function clearAll() {
-    taskList.innerHTML ="";
+  taskList.innerHTML = "";
 }
 
 // Add task on button click
 addBtn.addEventListener("click", addTask);
-clearBtn.addEventListener("click",clearAll)
+
+// Add task on Enter key press
+taskInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
+clearBtn.addEventListener("click", clearAll);
