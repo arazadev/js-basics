@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS Basics With Me</h1>
+    <button style="margin-right: 10px; cursor: pointer" id="start">
+      Start
+    </button>
+    <button style="margin-left: 10px; cursor: pointer" id="stop">Stop</button>
+  </body>
+
+  <script>
+    let intervalID = null;
+    const startBtn = document.querySelector("#start");
+    const stopBtn = document.querySelector("#stop");
+
+    startBtn.addEventListener("click", function () {
+      if (intervalID === null) {
+        intervalID = setInterval(() => {
+          console.log("Ali Raza");
+        }, 2000);
+      }
+    });
+
+    stopBtn.addEventListener("click", function () {
+      clearInterval(intervalID);
+      intervalID = null;
+
+    });
+
+  </script>
+</html>
